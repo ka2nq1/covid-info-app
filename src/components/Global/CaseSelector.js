@@ -1,9 +1,8 @@
 import { Checkbox, InputLabel, ListItemText, MenuItem, Select, FormControl  } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import queryString from 'query-string';
-
-const cases = ['confirmed', 'death', 'recovered'];
+import { updateQueryParams } from '../../helper';
 
 const selectorStyles = {
     width: 200,
@@ -15,38 +14,38 @@ const selectorStyles = {
     }
 }
 
-const Selector = () => {
+const CaseSelector = ({casesList}) => {
     const navigate = useNavigate();
-    const {search, pathname} = useLocation();
-    const query = queryString.parse(search);
-
-    const [selectedCases, setSelectedCases] = useState([cases[0]])
-
+    const location = useLocation();
+    const query = queryString.parse(location.search);
+    const activeCases = query.cases?.split(',') || [];
+    
     const handleChange = (event) => {
-        if (selectedCases.length === 1 && !selectedCases.includes(event.target.value[0])) {
+        const {value} = event.target;
+
+        if (activeCases.length === 1 && !activeCases.includes(value[0])) {
           return;
         } else {
-            setSelectedCases(event.target.value);
+            navigate(updateQueryParams({cases: value}, location))
         }
     };
 
     return (
         <FormControl sx={selectorStyles}>
-            <InputLabel id="demo-simple-select-label">Cases</InputLabel>
+            <InputLabel>Cases</InputLabel>
             <Select
-                id="demo-multiple-checkbox"
                 multiple
-                value={selectedCases}
+                value={activeCases}
                 label="Cases"
                 renderValue={(elem) => elem.join(', ')}
                 onChange={handleChange}
             >
-                {cases.map((elem, index) => (
+                {casesList.map((elem, index) => (
                     <MenuItem
                         key={index}
                         value={elem}
                     >
-                        <Checkbox checked={selectedCases.indexOf(elem) > -1} />
+                        <Checkbox checked={activeCases.indexOf(elem) > -1} />
                         <ListItemText primary={elem} />
                     </MenuItem>
                 ))}
@@ -55,4 +54,4 @@ const Selector = () => {
     )
 }
 
-export default Selector;
+export default CaseSelector;
