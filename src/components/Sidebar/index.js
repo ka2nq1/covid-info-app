@@ -1,9 +1,21 @@
 import { Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Toolbar } from '@mui/material';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+const navList = [
+    {
+        path: '/',
+        label: 'World WIP'
+    },
+    {
+        path: '/about',
+        label: 'About'
+    }
+];
 
 const Sidebar = () => {
     const navigate = useNavigate();
+    const {pathname} = useLocation();
     return (
         <Drawer
             variant="permanent"
@@ -15,26 +27,31 @@ const Sidebar = () => {
                 },
             }}
         >
-            <Toolbar/>
+            <Toolbar sx={{justifyContent: 'center'}}>
+                <img src={`${process.env.PUBLIC_URL}/logo.svg`} alt='logo'/>
+            </Toolbar>
             <Divider/>
             <List 
                 sx={{padding: 0}}
             >
-                <ListItem disablePadding>
-                    <ListItemButton onClick={() => navigate('/')}>
-                        <ListItemText primary={'World WIP'} />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton onClick={() => navigate('/country')}>
-                        <ListItemText primary={'Live By Country'} />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton onClick={() => navigate('/about')}>
+                {navList.map((e, index) => (
+                    <ListItem key={index} disablePadding>
+                        <ListItemButton
+                            selected={pathname === e.path}
+                            onClick={() => navigate(e.path)}
+                        >
+                            <ListItemText primary={e.label} />
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+                {/* <ListItem disablePadding>
+                    <ListItemButton 
+                        selected={pathname === '/about'}
+                        onClick={() => navigate('/about')}
+                    >
                         <ListItemText primary={'About'} />
                     </ListItemButton>
-                </ListItem>
+                </ListItem> */}
             </List>
         </Drawer>
     );
