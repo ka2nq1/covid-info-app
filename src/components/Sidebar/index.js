@@ -1,16 +1,42 @@
+import { Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Toolbar } from '@mui/material';
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
-
+    const navigate = useNavigate();
     return (
-        <ul>
-            <li>
-                <Link to='/'>World WIP</Link>
-                <Link to='/country'>Live By Country</Link>
-                <Link to='/about'>About</Link>
-            </li>
-        </ul>
+        <Drawer
+            variant="permanent"
+            anchor="left"
+            sx={{
+                '& .MuiDrawer-paper': {
+                    width: 200,
+                    boxSizing: 'border-box',
+                },
+            }}
+        >
+            <Toolbar/>
+            <Divider/>
+            <List 
+                sx={{padding: 0}}
+            >
+                <ListItem disablePadding>
+                    <ListItemButton onClick={() => navigate('/')}>
+                        <ListItemText primary={'World WIP'} />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton onClick={() => navigate('/country')}>
+                        <ListItemText primary={'Live By Country'} />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton onClick={() => navigate('/about')}>
+                        <ListItemText primary={'About'} />
+                    </ListItemButton>
+                </ListItem>
+            </List>
+        </Drawer>
     );
 };
 

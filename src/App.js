@@ -1,3 +1,4 @@
+import { Box, Divider, Toolbar } from '@mui/material';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import About from './components/About';
@@ -7,16 +8,16 @@ import Sidebar from './components/Sidebar';
 
 function App() {
     return (
-        <>
+        <Box paddingLeft='200px'>
             <Sidebar/>
-            <div>
+            <Box>
                 <Routes>
                     <Route path="/" element={<Global/>}/>
                     <Route path="/country" element={<Country/>}/>
                     <Route path="/about" element={<About/>}/>
                 </Routes>
-            </div>
-        </>
+            </Box>
+        </Box>
     );
 }
 
