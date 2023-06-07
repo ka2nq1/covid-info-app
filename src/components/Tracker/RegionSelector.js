@@ -4,13 +4,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { updateQueryParams } from '../../helper';
 import { getRegions } from '../../api';
 
-const selectorStyles = {
-    width: 200,
-    '.css-qiwgdb': {
-        padding: '9.5px 0 9.5px 12px'
-    }
-};
-
 const RegionSelector = ({ setData, query }) => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -43,7 +36,7 @@ const RegionSelector = ({ setData, query }) => {
     return isRegionsLoading ? (
         <Skeleton variant='rounded' width={200} height={35} />
     ) : (
-        <FormControl sx={selectorStyles}>
+        <FormControl sx={{width: '200px'}}>
             <InputLabel>Regions</InputLabel>
             <Select value={query.iso || 'Worldwide'} label='Regions' onChange={handleChange}>
                 <MenuItem value={'Worldwide'}>Worldwide</MenuItem>

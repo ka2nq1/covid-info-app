@@ -9,18 +9,25 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 // Styles remove input
 const pickerStyles = {
-    '.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root, .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root':
-        {
-            fontSize: '0.8rem'
-        },
-    '.css-1uvydh2, .css-1ald77x, .css-igs3ac': {
+    // '.css-1uvydh2, .css-1ald77x, .css-igs3ac': {
+    //     display: 'none'
+    // },
+    '.MuiOutlinedInput-input, .MuiInputLabel-root, .MuiOutlinedInput-notchedOutline': {
         display: 'none'
     },
-    '.css-vubbuv': {
-        width: '1.3em',
-        height: '1.3em'
+    // '.css-vubbuv': {
+    //     width: '1.8em',
+    //     height: '1.8em'
+    // },
+    // '.css-1nvf7g0': {
+    //     height: 'auto',
+    //     marginLeft: 0
+    // }
+    '.css-i4bv87-MuiSvgIcon-root': {
+        width: '1.8em',
+        height: '1.8em'
     },
-    '.css-1nvf7g0': {
+    '.MuiInputAdornment-root': {
         height: 'auto',
         marginLeft: 0
     }

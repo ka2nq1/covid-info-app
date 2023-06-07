@@ -3,13 +3,6 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { updateQueryParams } from '../../helper';
 
-const selectorStyles = {
-    width: 200,
-    '.css-qiwgdb': {
-        padding: '9.5px 0 9.5px 12px'
-    }
-};
-
 const CaseSelector = ({ casesList, query }) => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -20,7 +13,7 @@ const CaseSelector = ({ casesList, query }) => {
     };
 
     return (
-        <FormControl sx={selectorStyles}>
+        <FormControl sx={{width: '200px'}}>
             <InputLabel>Cases</InputLabel>
             <Select value={query.case || 'confirmed'} label='Cases' onChange={handleChange}>
                 {casesList.map((elem, index) => (

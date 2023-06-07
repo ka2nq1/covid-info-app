@@ -35,7 +35,7 @@ const Sidebar = () => {
                 }
             }}
         >
-            <Toolbar sx={{ justifyContent: 'center' }}>
+            <Toolbar sx={{ justifyContent: 'center', height: '90px' }}>
                 <img src={`${process.env.PUBLIC_URL}/logo.svg`} alt='logo' />
             </Toolbar>
             <Divider />

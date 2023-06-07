@@ -43,7 +43,7 @@ const Global = () => {
 
     return (
         <Box>
-            <Toolbar sx={{ gap: '30px' }}>
+            <Toolbar sx={{ gap: '30px', height: '90px' }}>
                 <Typography variant='h1'>World WIP</Typography>
                 <CaseSelector {...{ casesList, query }} />
                 <RegionSelector {...{ setData, query }} />
