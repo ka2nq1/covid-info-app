@@ -13,26 +13,14 @@ const pickerStyles = {
         {
             fontSize: '0.8rem'
         },
-    '.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root': {
+    '.css-1uvydh2, .css-1ald77x, .css-igs3ac': {
         display: 'none'
     },
-    '.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
-        display: 'none'
-    },
-    '.css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
-        display: 'none'
-    },
-    '.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root': {
-        display: 'none'
-    },
-    '.css-1y63lax-MuiFormControl-root-MuiTextField-root': {
-        width: 'auto'
-    },
-    '.css-i4bv87-MuiSvgIcon-root': {
+    '.css-vubbuv': {
         width: '1.3em',
         height: '1.3em'
     },
-    '.css-1laqsz7-MuiInputAdornment-root': {
+    '.css-1nvf7g0': {
         height: 'auto',
         marginLeft: 0
     }

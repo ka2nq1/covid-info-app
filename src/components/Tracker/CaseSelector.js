@@ -5,11 +5,7 @@ import { updateQueryParams } from '../../helper';
 
 const selectorStyles = {
     width: 200,
-    '.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root, .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root':
-        {
-            fontSize: '0.8rem'
-        },
-    '.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input': {
+    '.css-qiwgdb': {
         padding: '9.5px 0 9.5px 12px'
     }
 };
