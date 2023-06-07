@@ -9,20 +9,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 // Styles remove input
 const pickerStyles = {
-    // '.css-1uvydh2, .css-1ald77x, .css-igs3ac': {
-    //     display: 'none'
-    // },
     '.MuiOutlinedInput-input, .MuiInputLabel-root, .MuiOutlinedInput-notchedOutline': {
         display: 'none'
     },
-    // '.css-vubbuv': {
-    //     width: '1.8em',
-    //     height: '1.8em'
-    // },
-    // '.css-1nvf7g0': {
-    //     height: 'auto',
-    //     marginLeft: 0
-    // }
     '.MuiSvgIcon-root': {
         width: '1.8em',
         height: '1.8em'
