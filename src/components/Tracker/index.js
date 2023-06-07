@@ -4,14 +4,14 @@ import DateSelector from './DateSelector';
 import CaseSelector from './CaseSelector';
 import queryString from 'query-string';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { updateQueryParams } from '../../helper';
+import { createNotification, updateQueryParams } from '../../helper';
 import { getReports } from '../../api';
 import RegionSelector from './RegionSelector';
 import Chart from './Chart';
 
 const casesList = ['confirmed', 'deaths', 'recovered'];
 
-const Global = () => {
+const Tracker = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const query = queryString.parse(location.search);
@@ -22,9 +22,11 @@ const Global = () => {
     const handleGetData = (res) => {
         const resData = res.data.data;
 
-        if (!data.find((e) => e.date === resData.date)) {
+        if (!data.find((e) => e.date === resData.date) && !Array.isArray(resData)) {
             setData([...data, resData]
                 .sort((a, b) => new Date(a.date) - new Date(b.date)));
+        } else {
+            createNotification('warning', 'This date is already selected or there are no statistics for it!')
         }
         return;
     };
@@ -55,4 +57,4 @@ const Global = () => {
     );
 };
 
-export default Global;
+export default Tracker;
