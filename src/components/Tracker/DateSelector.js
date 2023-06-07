@@ -23,7 +23,7 @@ const pickerStyles = {
     //     height: 'auto',
     //     marginLeft: 0
     // }
-    '.css-i4bv87-MuiSvgIcon-root': {
+    '.MuiSvgIcon-root': {
         width: '1.8em',
         height: '1.8em'
     },

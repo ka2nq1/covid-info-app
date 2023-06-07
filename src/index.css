@@ -22,7 +22,7 @@ h1 {
 .recharts-wrapper {
     width: calc(100% - 140px) !important;
     height: calc(100% - 140px) !important;
-    margin: 0 0 0 26px;
+    margin: 26px 0 0 26px;
 }
 .recharts-surface {
     width: 100%;
