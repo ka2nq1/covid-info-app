@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/covid-info-app/static/css/main.cbd525ca.css",
-    "main.js": "/covid-info-app/static/js/main.439b5a3b.js",
+    "main.css": "/covid-info-app/static/css/main.12860e26.css",
+    "main.js": "/covid-info-app/static/js/main.fdecc1dd.js",
     "static/media/roboto-latin-500-normal.woff2": "/covid-info-app/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/covid-info-app/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
     "static/media/roboto-latin-400-normal.woff2": "/covid-info-app/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -45,11 +45,11 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/covid-info-app/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/covid-info-app/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/covid-info-app/index.html",
-    "main.cbd525ca.css.map": "/covid-info-app/static/css/main.cbd525ca.css.map",
-    "main.439b5a3b.js.map": "/covid-info-app/static/js/main.439b5a3b.js.map"
+    "main.12860e26.css.map": "/covid-info-app/static/css/main.12860e26.css.map",
+    "main.fdecc1dd.js.map": "/covid-info-app/static/js/main.fdecc1dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.cbd525ca.css",
-    "static/js/main.439b5a3b.js"
+    "static/css/main.12860e26.css",
+    "static/js/main.fdecc1dd.js"
   ]
 }
