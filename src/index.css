@@ -20,8 +20,8 @@ h1 {
 
 /* recharts.org does not allow you to specify values in percentages */
 .recharts-wrapper {
-    width: calc(100% - 140px) !important;
-    height: calc(100% - 140px) !important;
+    width: 80% !important;
+    height: 80% !important;
     margin: 26px 0 0 26px;
 }
 .recharts-surface {
