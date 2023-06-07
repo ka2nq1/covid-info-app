@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/covid-info-app/static/css/main.12860e26.css",
-    "main.js": "/covid-info-app/static/js/main.fdecc1dd.js",
+    "main.css": "/covid-info-app/static/css/main.4f9ce6bb.css",
+    "main.js": "/covid-info-app/static/js/main.8df662ae.js",
     "static/media/roboto-latin-500-normal.woff2": "/covid-info-app/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/covid-info-app/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
     "static/media/roboto-latin-400-normal.woff2": "/covid-info-app/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -38,6 +38,10 @@
     "static/media/roboto-vietnamese-400-normal.woff": "/covid-info-app/static/media/roboto-vietnamese-400-normal.e0e8ba725ebd107367a8.woff",
     "static/media/roboto-vietnamese-500-normal.woff": "/covid-info-app/static/media/roboto-vietnamese-500-normal.657896dad292ee9a0a0a.woff",
     "static/media/roboto-vietnamese-700-normal.woff": "/covid-info-app/static/media/roboto-vietnamese-700-normal.4df79f684fcbca8386bd.woff",
+    "static/media/notification.svg?s3g3t9": "/covid-info-app/static/media/notification.5d0158671dd860c714c4.svg",
+    "static/media/notification.eot": "/covid-info-app/static/media/notification.3657084dc0419605a91c.eot",
+    "static/media/notification.woff?s3g3t9": "/covid-info-app/static/media/notification.c392cd33d9d9de730f9d.woff",
+    "static/media/notification.ttf?s3g3t9": "/covid-info-app/static/media/notification.c5d9251ea82e42f75381.ttf",
     "static/media/roboto-greek-ext-500-normal.woff2": "/covid-info-app/static/media/roboto-greek-ext-500-normal.6fb9cffb1d3e72bf9293.woff2",
     "static/media/roboto-greek-ext-400-normal.woff2": "/covid-info-app/static/media/roboto-greek-ext-400-normal.169619821ea93019d1bb.woff2",
     "static/media/roboto-greek-ext-700-normal.woff2": "/covid-info-app/static/media/roboto-greek-ext-700-normal.bd9854c751441ccc1a70.woff2",
@@ -45,11 +49,11 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/covid-info-app/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/covid-info-app/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/covid-info-app/index.html",
-    "main.12860e26.css.map": "/covid-info-app/static/css/main.12860e26.css.map",
-    "main.fdecc1dd.js.map": "/covid-info-app/static/js/main.fdecc1dd.js.map"
+    "main.4f9ce6bb.css.map": "/covid-info-app/static/css/main.4f9ce6bb.css.map",
+    "main.8df662ae.js.map": "/covid-info-app/static/js/main.8df662ae.js.map"
   },
   "entrypoints": [
-    "static/css/main.12860e26.css",
-    "static/js/main.fdecc1dd.js"
+    "static/css/main.4f9ce6bb.css",
+    "static/js/main.8df662ae.js"
   ]
 }
