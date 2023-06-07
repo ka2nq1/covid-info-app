@@ -6,7 +6,7 @@ import { getRegions } from '../../api';
 
 const selectorStyles = {
     width: 200,
-    '.css-qiwgdb.css-qiwgdb.css-qiwgdb': {
+    '.css-qiwgdb': {
         padding: '9.5px 0 9.5px 12px'
     }
 };
