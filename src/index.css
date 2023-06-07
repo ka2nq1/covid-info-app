@@ -12,22 +12,17 @@ html {
     line-height: 20px;
 }
 
-a {
-    color: inherit;
-    text-decoration-line: inherit;
-}
-
-ul,
-ol {
-    list-style-type: none;
-}
-
-button {
-    cursor: pointer;
-}
-
 h1 {
     opacity: 0;
     position: absolute;
     pointer-events: none;
+}
+
+.recharts-wrapper {
+    width: 95%!important;
+    height: 95%!important;
+}
+.recharts-surface {
+    width: 100%;
+    height: 100%;
 }

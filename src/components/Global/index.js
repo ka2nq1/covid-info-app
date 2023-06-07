@@ -9,7 +9,7 @@ import { getReports } from '../../api';
 import RegionSelector from './RegionSelector';
 import Chart from './Chart';
 
-const casesList = ['confirmed', 'death', 'recovered'];
+const casesList = ['confirmed', 'deaths', 'recovered'];
 
 const Global = () => {
     const navigate = useNavigate();
@@ -18,27 +18,37 @@ const Global = () => {
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     
+    const handleGetData = (res) => {
+        const resData = res.data.data;
+
+        if (!data.find(e => e.date === resData.date)) {
+            setData([...data, resData]
+                .sort((a, b) => new Date(a.date) - new Date(b.date)))
+        }
+        return
+    }
+
     useEffect(() => {
         setIsLoading(true)
-        if(!Object.keys(query).includes('cases')) {
-            navigate(updateQueryParams({cases: casesList[0]}, location))
+        if(!Object.keys(query).includes('case')) {
+            navigate(updateQueryParams({case: casesList[0]}, location))
         }
         getReports(location.search)
-            .then(response => setData([...data, response.data.data]))
+            .then(handleGetData)
             .catch(error => console.error(error))
             .finally(() => setIsLoading(false))
-    }, [location])
+    }, [location.search])
 
     return (
         <Box>
             <Toolbar sx={{gap: '30px'}}>
                 <Typography variant='h1'>World WIP</Typography>
-                <CaseSelector {...{casesList}}/>
-                <RegionSelector/>
+                <CaseSelector {...{casesList, query}}/>
+                <RegionSelector {...{setData, query}}/>
                 <DateSelector {...{isLoading}}/>
             </Toolbar>
             <Divider />
-            <Chart {...{data}}/>
+            <Chart {...{data, query}}/>
         </Box>
     );
 };

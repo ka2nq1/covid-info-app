@@ -1,7 +1,6 @@
-import { Checkbox, InputLabel, ListItemText, MenuItem, Select, FormControl  } from '@mui/material';
+import { InputLabel, MenuItem, Select, FormControl  } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import queryString from 'query-string';
 import { updateQueryParams } from '../../helper';
 import { getRegions } from '../../api';
 
@@ -20,10 +19,6 @@ const selectorStyles = {
 }
 
 const regions = [
-    {
-        "iso": "World",
-        "name": "World"
-    },
     {
         "iso": "CHN",
         "name": "China"
@@ -62,10 +57,9 @@ const regions = [
     },
 ]
 
-const RegionSelector = () => {
+const RegionSelector = ({setData, query}) => {
     const navigate = useNavigate();
     const location = useLocation();
-    const query = queryString.parse(location.search);
     // const [regions, setRegions] = useState([]);
     // const [isLoading, setIsLoading] = useState(false);
 
@@ -79,26 +73,31 @@ const RegionSelector = () => {
     
     const handleChange = (event) => {
         const {value} = event.target;
-        if (value === 'World') {
+        if (value === 'The whole world') {
             navigate(updateQueryParams({iso: []}, location))
         } else {
             navigate(updateQueryParams({iso: value}, location))
         }
+
+        if (query.iso !== value) {
+            setData([])
+        }
     };
 
+    // console.log(query.iso)
     return (
         <FormControl sx={selectorStyles}>
             <InputLabel>Regions</InputLabel>
             <Select
-                value={query.iso || 'World'}
+                value={query.iso || 'The whole world'}
                 label="Regions"
                 onChange={handleChange}
             >
+                <MenuItem value={'The whole world'}>
+                    The whole world
+                </MenuItem>
                 {regions.map((elem, index) => (
-                    <MenuItem
-                        key={index}
-                        value={elem.iso}
-                    >
+                    <MenuItem key={index} value={elem.iso}>
                         {elem.name}   
                     </MenuItem>
                 ))}

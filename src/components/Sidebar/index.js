@@ -44,14 +44,6 @@ const Sidebar = () => {
                         </ListItemButton>
                     </ListItem>
                 ))}
-                {/* <ListItem disablePadding>
-                    <ListItemButton 
-                        selected={pathname === '/about'}
-                        onClick={() => navigate('/about')}
-                    >
-                        <ListItemText primary={'About'} />
-                    </ListItemButton>
-                </ListItem> */}
             </List>
         </Drawer>
     );

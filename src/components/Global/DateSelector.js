@@ -8,17 +8,33 @@ import { dateFormat, updateQueryParams } from '../../helper';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const pickerStyles = {
-    width: 130,
     '.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root, .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root': {
         fontSize: '0.8rem',
     },
     '.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root': {
-        top: '-6px',
-        fontSize: '0.8rem',
+        display: 'none',
     },
     '.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
-        padding: '9.5px 0 9.5px 12px',
+        display: 'none',
+    },
+    '.css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+        display: 'none',
+    },
+    '.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root': {
+        display: 'none',
+    },
+    '.css-1y63lax-MuiFormControl-root-MuiTextField-root': {
+        width: 'auto',
+    },
+    '.css-i4bv87-MuiSvgIcon-root': {
+        width: '1.3em',
+        height: '1.3em',
+    },
+    '.css-1laqsz7-MuiInputAdornment-root': {
+        height: 'auto',
+        marginLeft: 0
     }
+
 }
 
 const DateSelector = ({isLoading}) => {
