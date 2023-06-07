@@ -7,55 +7,54 @@ import dayjs from 'dayjs';
 import { dateFormat, updateQueryParams } from '../../helper';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+// Styles remove input
 const pickerStyles = {
-    '.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root, .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root': {
-        fontSize: '0.8rem',
-    },
+    '.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root, .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root':
+        {
+            fontSize: '0.8rem'
+        },
     '.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root': {
-        display: 'none',
+        display: 'none'
     },
     '.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
-        display: 'none',
+        display: 'none'
     },
     '.css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
-        display: 'none',
+        display: 'none'
     },
     '.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root': {
-        display: 'none',
+        display: 'none'
     },
     '.css-1y63lax-MuiFormControl-root-MuiTextField-root': {
-        width: 'auto',
+        width: 'auto'
     },
     '.css-i4bv87-MuiSvgIcon-root': {
         width: '1.3em',
-        height: '1.3em',
+        height: '1.3em'
     },
     '.css-1laqsz7-MuiInputAdornment-root': {
         height: 'auto',
         marginLeft: 0
     }
+};
 
-}
-
-const DateSelector = ({isLoading}) => {
+const DateSelector = ({ isLoading }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [dates, setDates] = useState([]);
 
     const handleChange = (date) => {
-        setDates([...dates, date])
-        navigate(updateQueryParams({date: dateFormat(date)}, location))
-    }
+        setDates([...dates, date]);
+        navigate(updateQueryParams({ date: dateFormat(date) }, location));
+    };
 
     return (
-        <Box>   
+        <Box>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker 
-                    label="Date" 
+                <DatePicker
+                    label='Date'
                     sx={pickerStyles}
-                    value={
-                        dates[dates.length + 1]    
-                    }
+                    value={dates}
                     onChange={handleChange}
                     closeOnSelect={false}
                     maxDate={dayjs('2023-03-09')}
@@ -65,6 +64,6 @@ const DateSelector = ({isLoading}) => {
             </LocalizationProvider>
         </Box>
     );
-}
+};
 
 export default DateSelector;

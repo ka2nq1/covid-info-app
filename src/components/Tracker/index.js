@@ -15,40 +15,42 @@ const Global = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const query = queryString.parse(location.search);
-    const [data, setData] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
     
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
     const handleGetData = (res) => {
         const resData = res.data.data;
 
-        if (!data.find(e => e.date === resData.date)) {
+        if (!data.find((e) => e.date === resData.date)) {
             setData([...data, resData]
-                .sort((a, b) => new Date(a.date) - new Date(b.date)))
+                .sort((a, b) => new Date(a.date) - new Date(b.date)));
         }
-        return
-    }
+        return;
+    };
 
     useEffect(() => {
-        setIsLoading(true)
-        if(!Object.keys(query).includes('case')) {
-            navigate(updateQueryParams({case: casesList[0]}, location))
+        setIsLoading(true);
+        // Sets the base value for the case
+        if (!Object.keys(query).includes('case')) {
+            navigate(updateQueryParams({ case: casesList[0] }, location));
         }
         getReports(location.search)
             .then(handleGetData)
-            .catch(error => console.error(error))
-            .finally(() => setIsLoading(false))
-    }, [location.search])
+            .catch((error) => console.error(error))
+            .finally(() => setIsLoading(false));
+    }, [location.search]);
 
     return (
         <Box>
-            <Toolbar sx={{gap: '30px'}}>
+            <Toolbar sx={{ gap: '30px' }}>
                 <Typography variant='h1'>World WIP</Typography>
-                <CaseSelector {...{casesList, query}}/>
-                <RegionSelector {...{setData, query}}/>
-                <DateSelector {...{isLoading}}/>
+                <CaseSelector {...{ casesList, query }} />
+                <RegionSelector {...{ setData, query }} />
+                <DateSelector {...{ isLoading }} />
             </Toolbar>
             <Divider />
-            <Chart {...{data, query}}/>
+            <Chart {...{ data, query }} />
         </Box>
     );
 };

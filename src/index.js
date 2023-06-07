@@ -9,6 +9,7 @@ import { HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    // HashRouter for correct work with github pages
     <HashRouter>
         <App />
     </HashRouter>

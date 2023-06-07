@@ -1,4 +1,12 @@
-import { Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Toolbar } from '@mui/material';
+import {
+    Divider,
+    Drawer,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    Toolbar
+} from '@mui/material';
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -15,25 +23,23 @@ const navList = [
 
 const Sidebar = () => {
     const navigate = useNavigate();
-    const {pathname} = useLocation();
+    const { pathname } = useLocation();
     return (
         <Drawer
-            variant="permanent"
-            anchor="left"
+            variant='permanent'
+            anchor='left'
             sx={{
                 '& .MuiDrawer-paper': {
                     width: 200,
-                    boxSizing: 'border-box',
-                },
+                    boxSizing: 'border-box'
+                }
             }}
         >
-            <Toolbar sx={{justifyContent: 'center'}}>
-                <img src={`${process.env.PUBLIC_URL}/logo.svg`} alt='logo'/>
+            <Toolbar sx={{ justifyContent: 'center' }}>
+                <img src={`${process.env.PUBLIC_URL}/logo.svg`} alt='logo' />
             </Toolbar>
-            <Divider/>
-            <List 
-                sx={{padding: 0}}
-            >
+            <Divider />
+            <List sx={{ padding: 0 }}>
                 {navList.map((e, index) => (
                     <ListItem key={index} disablePadding>
                         <ListItemButton

@@ -18,9 +18,11 @@ h1 {
     pointer-events: none;
 }
 
+/* recharts.org does not allow you to specify values in percentages */
 .recharts-wrapper {
-    width: 95%!important;
-    height: 95%!important;
+    width: calc(100% - 140px) !important;
+    height: calc(100% - 140px) !important;
+    margin: 0 0 0 26px;
 }
 .recharts-surface {
     width: 100%;
