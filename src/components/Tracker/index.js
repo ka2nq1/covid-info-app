@@ -25,7 +25,8 @@ const Tracker = () => {
         if (!data.find((e) => e.date === resData.date) && !Array.isArray(resData)) {
             setData([...data, resData]
                 .sort((a, b) => new Date(a.date) - new Date(b.date)));
-        } else {
+        }
+        if (Array.isArray(resData)) {
             createNotification('warning', 'This date is already selected or there are no statistics for it!')
         }
         return;
